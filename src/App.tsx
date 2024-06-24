@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import {CalculatorLayout} from "./shared/layouts/CalculatorLayout";
+import {HistoryLayout} from "./shared/layouts/HistoryLayout";
+import {ConvertisseurLayout} from "./shared/layouts/ConvertisseurLayout";
+import {NavbarComponent} from "./features/navbar/components/NavbarComponent";
 
-function App() {
+// dependencies
+import {NavigationManager} from "./features/navbar/managers/NavigationManager";
+
+export const App:React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+      <body className="light-mode">
+          <BrowserRouter>
+            <NavbarComponent navigationManager={new NavigationManager()}/>
+            <Routes>
+                <Route path={"/calculatrice"} element={<CalculatorLayout />}></Route>
+                <Route path={"/historique"} element={<HistoryLayout />}></Route>
+                <Route path={"/convertisseur"} element={<ConvertisseurLayout />}></Route>
+                <Route path={"*"} element={<Navigate to={"/calculatrice"} replace />}></Route>
+            </Routes>
+          </BrowserRouter>
+      </body>
+  )
+};

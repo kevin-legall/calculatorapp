@@ -1,0 +1,83 @@
+nav {
+  height: 50px;
+  position: absolute;
+  z-index: 101;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+  padding: 10px;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  -webkit-transition: 1s background-color ease-in-out;
+  -o-transition: 1s background-color ease-in-out;
+  transition: 1s background-color ease-in-out;
+
+  ul {
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    list-style: none;
+
+    li {
+      height: 100%;
+
+      a {
+        height: 100%;
+        font-size: 1.2rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        font-family: $medium;
+        text-decoration: none;
+        color: $grey;
+
+        &.nav-active {
+          color: $red;
+        }
+      }
+    }
+  }
+  .nav-line {
+    position: relative;
+    height: 2px;
+    width: 90%;
+    margin: 10px auto;
+    background: $grey;
+  }
+
+  .right-line {
+    position: relative;
+    height: 1px;
+    width: 90%;
+    margin-left: auto;
+    background: $grey;
+  }
+
+  .colored-line {
+    height: 2px;
+    width: 33%;
+    position: absolute;
+    left: 0;
+    background: $red;
+    -webkit-transition: left 200ms ease-in-out;
+    -o-transition: left 200ms ease-in-out;
+    transition: left 200ms ease-in-out;
+  }
+}
