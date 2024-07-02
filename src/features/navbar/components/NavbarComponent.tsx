@@ -29,15 +29,15 @@ export const NavbarComponent = ({ navigationManager }: Manager) => {
     return (
         <nav data-test="navigation">
             <ul className="nav-ul">
-                <li><NavLink to={'/calculatrice'} onClick={()=> handleNavbarStyle(NavbarEnum.CALCULATRICE)}
+                <li><NavLink data-test-id="navigation-calculatrice" to={'/calculatrice'} onClick={()=> handleNavbarStyle(NavbarEnum.CALCULATRICE)}
                              className={(nav) => (nav.isActive ? "nav-active" : "nav")}>Calculatrice</NavLink></li>
-                <li><NavLink to={'/historique'}  onClick={()=> handleNavbarStyle(NavbarEnum.HISTORIQUE)}
+                <li><NavLink data-test-id="navigation-historique" to={'/historique'}  onClick={()=> handleNavbarStyle(NavbarEnum.HISTORIQUE)}
                              className={(nav) => (nav.isActive ? "nav-active" : "nav")}>Historique</NavLink></li>
-                <li><NavLink to={'/convertisseur'} onClick={()=> handleNavbarStyle(NavbarEnum.CONVERTISSEUR)}
+                <li><NavLink data-test-id="navigation-convertisseur" to={'/convertisseur'} onClick={()=> handleNavbarStyle(NavbarEnum.CONVERTISSEUR)}
                              className={(nav) => (nav.isActive ? "nav-active" : "nav")}>Convertisseur</NavLink></li>
             </ul>
             <div className="nav-line">
-                <div className="colored-line" data-test="line-style" style={{left: `${lineStyle}%`}}></div>
+                <div className="colored-line" data-test-id="colored-line" style={{left: `${lineStyle}%`}}></div>
             </div>
         </nav>
     );
