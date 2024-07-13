@@ -1,9 +1,10 @@
 import React from 'react';
+import {CalculatorComponent} from "../../features/calculation/core/components/CalculatorComponent";
 
 export const CalculatorLayout = () => {
     return (
         <main>
-            <h1>Calculatrice</h1>
+            <CalculatorComponent></CalculatorComponent>
         </main>
     );
 };

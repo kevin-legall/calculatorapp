@@ -10,7 +10,7 @@ import {NavigationManager} from "./features/navbar/managers/NavigationManager";
 
 export const App:React.FC = () => {
   return (
-      <body className="light-mode">
+      <body className="">
           <BrowserRouter>
             <NavbarComponent navigationManager={new NavigationManager()}/>
             <Routes>
