@@ -10,16 +10,14 @@ import {NavigationManager} from "./features/navbar/managers/NavigationManager";
 
 export const App:React.FC = () => {
   return (
-      <body className="">
-          <BrowserRouter>
-            <NavbarComponent navigationManager={new NavigationManager()}/>
-            <Routes>
-                <Route path={"/calculatrice"} element={<CalculatorLayout />}></Route>
-                <Route path={"/historique"} element={<HistoryLayout />}></Route>
-                <Route path={"/convertisseur"} element={<ConvertisseurLayout />}></Route>
-                <Route path={"*"} element={<Navigate to={"/calculatrice"} replace />}></Route>
-            </Routes>
-          </BrowserRouter>
-      </body>
+      <BrowserRouter>
+        <NavbarComponent navigationManager={new NavigationManager()}/>
+        <Routes>
+            <Route path={"/calculatrice"} element={<CalculatorLayout />}></Route>
+            <Route path={"/historique"} element={<HistoryLayout />}></Route>
+            <Route path={"/convertisseur"} element={<ConvertisseurLayout />}></Route>
+            <Route path={"*"} element={<Navigate to={"/calculatrice"} replace />}></Route>
+        </Routes>
+      </BrowserRouter>
   )
 };
